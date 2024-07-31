@@ -1,6 +1,6 @@
-import { add } from '../src/math';
+import { add } from "./math";
 
-describe('add function', () => {
+describe('add', () => {
   it('should add two numbers correctly', () => {
     expect(add(1, 2)).toBe(3);
   });
