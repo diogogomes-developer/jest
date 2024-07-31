@@ -1,23 +1,7 @@
-export interface Variant {
-  size: string;
-  quantity: number;
-}
-
-export interface OrderVariant {
-  productId: string;
-  size: string;
-  quantity: number;
-}
-
-export interface Product {
-  id: string;
-  name: string;
-  variants: Variant[];
-}
-
-export interface Order {
-  products: Product[];
-}
+import { Order } from "./models/Order";
+import { OrderVariant } from "./models/OrderVariant";
+import { Product } from "./models/Product";
+import { Variant } from "./models/Variant";
 
 export function processOrderStocks(order: Order): OrderVariant[] {
   const orderVariants: OrderVariant[] = [];
