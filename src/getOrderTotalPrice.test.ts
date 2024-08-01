@@ -1,7 +1,7 @@
+import { getOrderTotalPrice } from "./getOrderTotalPrice";
+import { getOrderTotalStock } from "./getOrderTotalStock";
 import { Order } from "./models/Order";
-import { OrderVariant } from "./models/OrderVariant";
 import { Product } from "./models/Product";
-import { processOrderStocks } from "./processOrderStocks";
 
 describe("processOrderStocks", () => {
   const product1: Product = {
@@ -27,13 +27,8 @@ describe("processOrderStocks", () => {
   };
 
   it("should return order variants array", () => {
-    const orderVariants = processOrderStocks(order);
+    const orderTotalStock = getOrderTotalPrice(order);
 
-    expect(orderVariants).toEqual<OrderVariant[]>([
-      { productId: "id1", size: "20", quantity: 1 },
-      { productId: "id1", size: "21", quantity: 2 },
-      { productId: "id2", size: "40", quantity: 4 },
-      { productId: "id2", size: "41", quantity: 7 },
-    ]);
+    expect(orderTotalStock).toBe<number>(700);
   });
 });
