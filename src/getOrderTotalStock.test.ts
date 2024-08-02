@@ -1,4 +1,4 @@
-import { getOrderTotalStock } from "./getOrderTotalStock";
+import { getOrderTotalQuantity } from "./getOrderTotalQuantity";
 import { Order } from "./models/Order";
 import { Product } from "./models/Product";
 
@@ -26,7 +26,7 @@ describe("processOrderStocks", () => {
   };
 
   it("should return order variants array", () => {
-    const orderTotalStock = getOrderTotalStock(order);
+    const orderTotalStock = getOrderTotalQuantity(order);
 
     expect(orderTotalStock).toBe<number>(14);
   });

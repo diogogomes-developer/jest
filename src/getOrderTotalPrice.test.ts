@@ -1,5 +1,4 @@
 import { getOrderTotalPrice } from "./getOrderTotalPrice";
-import { getOrderTotalStock } from "./getOrderTotalStock";
 import { Order } from "./models/Order";
 import { Product } from "./models/Product";
 
